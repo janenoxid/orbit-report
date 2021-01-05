@@ -27,28 +27,7 @@ export class OrbitCountsComponent implements OnInit {
       }
     }
     return count;
-
-    
-
-/* Here's an example from the internet:
-
-function CountRows() {
-        var totalRowCount = 0;
-        var rowCount = 0;
-        var table = document.getElementById("tblCustomers");
-        var rows = table.getElementsByTagName("tr")
-        for (var i = 0; i < rows.length; i++) {
-            totalRowCount++;
-            if (rows[i].getElementsByTagName("td").length > 0) {
-                rowCount++;
-            }
-        }
-        var message = "Total Row Count: " + totalRowCount;
-        message += "\nRow Count: " + rowCount;
-        alert(message);
-*/
  }
-
 
 
 }
