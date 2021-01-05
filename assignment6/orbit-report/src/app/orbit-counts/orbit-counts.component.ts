@@ -16,11 +16,19 @@ export class OrbitCountsComponent implements OnInit {
 
   // How do I do the total count vs. the per-item count?
   // Maybe I borrow some ideas from the search function in order to make sure the type is the same.
-  countType(){
-    let count = ''
-    for(let i = 0; i < this.satellites.length; i++){
 
+  
+  countType(type: string): number {
+    let count: number = 0;
+    for(let i = 0; i < this.satellites.length; i++){
+      let objectType = this.satellites[i].type.toLowerCase()
+      if (objectType === type.toLowerCase()){
+        count ++; 
+      }
     }
+    return count;
+
+    
 
 /* Here's an example from the internet:
 
@@ -39,7 +47,7 @@ function CountRows() {
         message += "\nRow Count: " + rowCount;
         alert(message);
 */
-  }
+ }
 
 
 
