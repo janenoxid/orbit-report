@@ -1,0 +1,41 @@
+.sortable {
+  cursor: pointer;
+  color: #dd5;
+}
+
+.warning {
+  background-color: #da8a8a;
+}
+
+table {
+  color: rgb(71, 66, 109);
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #34495e;
+  border-style: solid;
+  overflow: hidden;
+  margin: 12px 0;
+  padding: 2px;
+  min-width: 300px;
+  background: #eee1ee;
+}
+
+.header-row {
+  background: #34495e;
+  color: #fff;
+}
+
+th,
+td {
+  text-align: left;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #91a5b9;
+  margin: 5px 10px;
+  padding: 6px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
