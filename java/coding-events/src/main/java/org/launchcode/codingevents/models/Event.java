@@ -1,8 +1,8 @@
 package org.launchcode.codingevents.models;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
+import javax.xml.crypto.Data;
+import java.util.Date;
 import java.util.Objects;
 
 public class Event {
@@ -23,12 +23,33 @@ public class Event {
 
     private EventType type;
 
+    @NotBlank(message = "Location is required.")
+    @NotNull(message = "Please enter a location.")
+    private String location;
 
-    public Event(String name, String description, String contactEmail, EventType type) {
+    @AssertTrue(message = "This value must be true.")
+    private boolean registrationRequired;
+
+    @Min(value = 1, message = "Please enter a value greater than 0.")
+    private int numAttendees;
+
+    @Future(message = "Please enter a future date.")
+    private Date eventDate;
+
+
+
+
+    public Event(String name, String description, String contactEmail,
+                 String location, boolean registrationRequired, int numAttendees, Date eventDate,
+                 EventType type) {
         this();
         this.name = name;
         this.description = description;
         this.contactEmail = contactEmail;
+        this.location = location;
+        this.registrationRequired = registrationRequired;
+        this.numAttendees = numAttendees;
+        this.eventDate = eventDate;
         this.type = type;
     }
 
@@ -63,6 +84,38 @@ public class Event {
 
     public int getId() {
         return id;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public boolean isRegistrationRequired() {
+        return registrationRequired;
+    }
+
+    public void setRegistrationRequired(boolean registrationRequired) {
+        this.registrationRequired = registrationRequired;
+    }
+
+    public int getNumAttendees() {
+        return numAttendees;
+    }
+
+    public void setNumAttendees(int numAttendees) {
+        this.numAttendees = numAttendees;
+    }
+
+    public Date getEventDate() {
+        return eventDate;
+    }
+
+    public void setEventDate(Date eventDate) {
+        this.eventDate = eventDate;
     }
 
     public EventType getType() {
